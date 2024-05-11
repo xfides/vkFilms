@@ -1,6 +1,6 @@
-import './App.module.css'
-import {useService} from "./hooks/useService.ts";
-import {getFilmById, getFilms} from "./api/service.ts";
+import './style.module.css'
+import {useService} from "@/hooks/useService.ts";
+import {getFilmById, getFilms} from "@/api/service.ts";
 
 interface FilmCardShort {
   nameShort: string
