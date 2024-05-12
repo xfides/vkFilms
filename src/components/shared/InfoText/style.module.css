@@ -1,0 +1,16 @@
+.info:first-of-type {
+  margin-top: 0;
+}
+
+.info:last-of-type{
+  margin-bottom: 0;
+}
+
+.info a{
+  font-size: var(--font-size-bigger);
+  font-weight: 800;
+}
+
+.info span {
+  display: inline-block;
+}

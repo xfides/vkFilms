@@ -1,2 +1,43 @@
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--vertical-gap);
 }
+
+.footer > * {
+  margin-left: var(--horizontal-gap);
+  margin-right: var(--horizontal-gap);
+}
+
+.footer > :first-child {
+  margin-left: 0;
+  text-align: left;
+}
+
+.footer > :last-child {
+  margin-right: 0;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+
+  .footer {
+    flex-wrap: wrap;
+  }
+
+  .footer > :first-child {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .footer > :last-child {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+}
+
+

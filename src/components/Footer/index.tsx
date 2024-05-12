@@ -1,15 +1,31 @@
 import {memo} from "react";
-import './style.module.css'
+import css from './style.module.css'
+import Logo from "@/components/shared/Logo";
+import InfoText from "@/components/shared/InfoText/InfoText.tsx";
 
 function Footer() {
   return (
-    <footer className="footer">
-      <section className="footer__logo logo logo--smaller">VK Films</section>
-      <section className="footer__statistics">
-        <p>Всего с сервера запрошено 30 фильмов</p>
+    <footer className={css.footer}>
+      <Logo size={"small"}/>
+
+      <section>
+        <InfoText>
+          Автор проекта: Барабанов Дмитрий Александрович
+        </InfoText>
+
+        <ul>
+          <li>
+            <InfoText><span>телеграмм: @xfides</span></InfoText>
+          </li>
+          <li>
+            <InfoText><span>email: baradmitrij@yandex.ru</span></InfoText>
+          </li>
+        </ul>
+
       </section>
     </footer>
-  );
+  )
+    ;
 }
 
 const MemoFooter = memo(Footer)

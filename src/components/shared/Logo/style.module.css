@@ -1,0 +1,19 @@
+.logo {
+  cursor: default;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  min-width: 200px;
+}
+
+.logoCenter {
+  text-align: center;
+}
+
+.logoBig{
+  font-size: var(--font-size-bigger);
+}
+
+.logoSmall {
+  font-size: var(--font-size-smaller);
+}

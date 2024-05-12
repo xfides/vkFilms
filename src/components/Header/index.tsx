@@ -1,19 +1,27 @@
 import {memo} from "react";
+import css from './style.module.css'
+import Logo from "@/components/shared/Logo";
+import InfoText from "@/components/shared/InfoText/InfoText.tsx";
 
 function Header() {
   return (
-    <header className="header">
-      <h1 className="header__logo logo">VK Films</h1>
+    <header className={css.header}>
+      <Logo />
 
-      <section className="header__profile profile">
-        <p className="profile__rating">
+      <section>
+        <InfoText>
           Тестовое задание для поступления на
           стажировку по React стеку
-        </p>
-        <p className="profile__rating">
-          Исходный код можно найти в репозитории на GitHub
-          по <a href='#'>ссылке</a> ( https://github.com/xfides/vkFilms )
-        </p>
+        </InfoText>
+        <InfoText>
+          Исходный код можно найти в репозитории на GitHub по
+          &nbsp;
+          <a href='https://github.com/xfides/vkFilms' target='_blank'>
+            ссылке
+          </a>
+          &nbsp;
+          <span>( https://github.com/xfides/vkFilms )</span>
+        </InfoText>
       </section>
 
     </header>

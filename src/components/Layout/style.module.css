@@ -11,6 +11,8 @@ html {
 
 body {
   max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
   padding: var(--vertical-gap) var(--horizontal-gap) 0;
   width: 100%;
   min-height: 100%;
@@ -28,10 +30,11 @@ main {
   flex-grow: 1;
 }
 
-a:link {
+a, a:link {
   opacity: 1;
   text-decoration: none;
   transition: opacity 0.1s ease-in;
+  color: var(--text-color);
 }
 
 a:hover {
@@ -40,4 +43,9 @@ a:hover {
 
 button {
   cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }

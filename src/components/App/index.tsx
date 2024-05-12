@@ -6,7 +6,6 @@ function App() {
   return (
     <Layout>
       {/*<FilmList></FilmList>*/}
-
     </Layout>
   );
 }
