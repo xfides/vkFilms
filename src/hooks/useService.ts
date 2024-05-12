@@ -1,23 +1,6 @@
 import {useEffect, useRef, useState} from "react";
-
-function shallowEqualArrays(arrA: unknown[], arrB: unknown[]): boolean {
-  if (arrA === arrB) {
-    return true;
-  }
-  if (!arrA || !arrB) {
-    return false;
-  }
-  const len = arrA.length;
-  if (arrB.length !== len) {
-    return false;
-  }
-  for (let i = 0; i < len; i++) {
-    if (arrA[i] !== arrB[i]) {
-      return false;
-    }
-  }
-  return true;
-}
+import {AsyncService} from "@/ts/films.ts";
+import {shallowEqualArrays} from "@/utils";
 
 function useUpdatedServiceArgs<ServiceArgs extends unknown[]>(
   newServiceArgs: ServiceArgs
@@ -42,7 +25,7 @@ export function useService<
 >(
   serviceCB: (...args: ServiceArgs) => Promise<ServiceData>,
   ...currentServiceArgs: ServiceArgs
-) {
+): AsyncService<ServiceData> {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<ServiceData | null>(null);
   const [error, setError] = useState<Error | undefined>(undefined);
