@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  outline: 1px solid red;
+}
+
+:root {
+  --text-color: #fff;
+  --text-color-active: #ffe800;
+  --text-color-good: #7bc549;
+  --text-color-average: #e49a27;
+  --text-color-poor: red;
+
+  --outline-color: #31353f;
+
+  --horizontal-gap: 20px;
+  --vertical-gap: 28px;
+
+  --font: 'Open Sans', sans-serif;
+  --font-size: 16px;
+  --font-size-smaller: 14px;
+  --font-size-bigger: 20px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
