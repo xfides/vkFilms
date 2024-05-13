@@ -29,7 +29,7 @@ export default function AppProviders({children}: { children: ReactNode }) {
     setKindOfFilms(kindObj);
   }, [])
 
-  //    ----    ----    ---- 5581330
+  //    ----    ----    ----
 
   const [filmId, setFilmId] = useState<FilmIdPicked | null>(null);
 
