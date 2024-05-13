@@ -1,4 +1,4 @@
-import './style.module.css'
+import './style.css'
 import MemoHeader from "@/components/Header";
 import MemoFooter from "@/components/Footer";
 import {Outlet} from "react-router-dom";
