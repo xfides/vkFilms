@@ -6,10 +6,10 @@ import {
 } from "@/context";
 import {ReactNode, useCallback, useState} from "react";
 import {
+  ResponseFilmCardShort,
   FilmCardFull,
-  FilmCardShort,
   FilmIdPicked,
-  FilmsKind
+  FilmsKind,
 } from "@/ts/films.ts";
 import {useService} from "@/hooks/useService.ts";
 import {getFilmById, getFilms} from "@/api/service.ts";
@@ -21,7 +21,7 @@ export default function AppProviders({children}: { children: ReactNode }) {
   const [kindOfFilms, setKindOfFilms] = useState<FilmsKind | null>(null);
 
   const allFilmsService = useService<
-    FilmCardShort[],
+    ResponseFilmCardShort,
     Parameters<typeof getFilms>
   >(getFilms, kindOfFilms)
 

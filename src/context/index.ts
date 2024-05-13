@@ -2,14 +2,16 @@ import {createContext} from "react";
 import {
   AsyncService,
   FilmCardFull,
-  FilmCardShort,
+  ResponseFilmCardShort,
   FilmsKind,
   FilmIdPicked,
 } from "@/ts/films.ts";
 
 const noOpFn = () => {}
 
-export const AllFilmsContext = createContext<AsyncService<FilmCardShort[]>>({
+export const AllFilmsContext = createContext<
+  AsyncService<ResponseFilmCardShort>
+>({
   data: null,
   error: undefined,
   loading: false
