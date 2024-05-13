@@ -7,7 +7,7 @@ import NotFoundPage from "@/components/NotFoundPage";
 function App() {
   return (
     <Routes>
-      <Route  element={<Layout/>}>
+      <Route element={<Layout/>}>
         <Route path="/" element={<FilmList/>}/>
         <Route path="/:id" element={<FilmFull/>}/>
         <Route path="*" element={<NotFoundPage/>}/>

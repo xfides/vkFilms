@@ -1,9 +1,7 @@
 import {FilmIdPicked, FilmsKind} from "@/ts/films.ts";
 
 const HOST = 'https://api.kinopoisk.dev/v1.4';
-// const HOST = 'https://freetestapi.com/api/v1';
 const PATH_MOVIES = 'movie';
-// const PATH_MOVIES = 'movies';
 const API_KEY = 'Q3Q0Y7K-JS4MFQA-H2Y9STK-FTVHWRQ'
 
 const requestHeaders = new Headers();

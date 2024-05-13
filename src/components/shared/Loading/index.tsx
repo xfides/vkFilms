@@ -1,9 +1,9 @@
-import css from  './style.module.css';
+import css from './style.module.css';
 import loader from '@/assets/images/loader.gif';
 
-function Loading({loading = false}: {loading: boolean}) {
+function Loading({loading = false}: { loading: boolean }) {
 
-  if(!loading) return null;
+  if (!loading) return null;
 
   return (
     <div className={css.loaderWrap}>

@@ -1,10 +1,11 @@
-.filmOneWrap{}
+.filmOneWrap {
+}
 
-.control{
+.control {
   display: block;
   text-align: center;
   padding: var(--vertical-gap) var(--horizontal-gap);
-  border-top:  1px dotted var(--text-color);
+  border-top: 1px dotted var(--text-color);
   margin-top: var(--vertical-gap);
 }
 

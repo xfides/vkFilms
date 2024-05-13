@@ -1,25 +1,26 @@
-.filmOne{
+.filmOne {
   display: flex;
   align-items: start;
   justify-content: space-between;
 }
 
-.filmOneSignsAll{
+.filmOneSignsAll {
   width: 40%;
 }
 
-.filmOnePosterWrap{
+.filmOnePosterWrap {
   height: 400px;
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--text-color);
 }
 
-.filmOneSignsSmall{
+.filmOneSignsSmall {
   color: var(--text-color-average);
   font-size: var(--font-size-bigger);
 }
 
-.filmOneInfo{
+.filmOneInfo {
   width: 60%;
   padding: 0 var(--horizontal-gap);
 }
@@ -29,15 +30,15 @@
     flex-wrap: wrap;
   }
 
-  .filmOneSignsAll{
+  .filmOneSignsAll {
     width: 100%;
   }
 
-  .filmOneSignsSmall{
+  .filmOneSignsSmall {
     text-align: center;
   }
 
-  .filmOneInfo{
+  .filmOneInfo {
     width: 100%;
     padding: var(--vertical-gap) 0;
   }

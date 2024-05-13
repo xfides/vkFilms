@@ -6,7 +6,7 @@ import InfoText from "@/components/shared/InfoText/InfoText.tsx";
 function Header() {
   return (
     <header className={css.header}>
-      <Logo />
+      <Logo/>
 
       <section>
         <InfoText>
