@@ -28,6 +28,8 @@ body {
 
 main {
   flex-grow: 1;
+  position: relative;
+  padding: var(--vertical-gap) 0;
 }
 
 a, a:link {

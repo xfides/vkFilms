@@ -1,21 +1,33 @@
-function FilmListItem() {
+import css from './style.module.css';
+import {FilmCardShort} from "@/ts/films.ts";
+
+function FilmListItem(props: { info: FilmCardShort }) {
+  const {id, name, alternativeName, enName, poster} = props.info;
+  const {previewUrl, url} = poster ?? {previewUrl: null, url: null};
+  console.log(id);
+
+  const filmName = name ?? alternativeName ?? enName ?? 'movie name is missing';
+  const previewImgUrl = previewUrl ?? url ?? null;
+
+  let img = <div className={css.filmImg}><strong>poster missing</strong></div>;
+  if (previewImgUrl) {
+    img = (
+      <img src={previewImgUrl}
+           alt="poster"
+           className={css.filmImg}
+      />
+    )
+  }
+
   return (
-    <article className="film-card">
-      <h3 className="film-card__title">The Dance of Life</h3>
-      <p className="film-card__rating">8.3</p>
-      <p className="film-card__info">
-        <span className="film-card__year">1929</span>
-        <span className="film-card__duration">1h 55m</span>
-        <span className="film-card__genre">Musical</span>
-      </p>
-      <img src="./images/posters/the-dance-of-life.jpg" alt=""
-           className="film-card__poster" />
-      <p className="film-card__description">Burlesque comic Ralph
-        "Skid"
-        Johnson (Skelly), and specialty dancer Bonny Lee King
-        (Carroll),
-        end up together on a cold, rainy night at a tr…</p>
-      <a className="film-card__comments">5 comments</a>
+    <article className={css.filmCard}>
+      <a href="#" className={css.filmLink}>
+        <div className={css.filmWrapImg}>
+          {img}
+        </div>
+      </a>
+
+      <h3 className={css.filmName}>{filmName}</h3>
     </article>
   );
 }

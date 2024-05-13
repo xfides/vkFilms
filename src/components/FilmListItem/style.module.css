@@ -1,0 +1,42 @@
+.filmCard {
+  width: 240px;
+  margin: var(--horizontal-gap) var(--horizontal-gap);
+}
+
+.filmLink{
+  display: block;
+}
+
+.filmWrapImg {
+  height: 300px;
+  border: 1px solid var(--text-color-average);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.filmImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  color: var(--text-color-poor);
+  font-size: var(--font-size-bigger);
+  transition: top 0.1s ease-in;
+}
+
+.filmWrapImg:hover .filmImg {
+  top: calc(var(--vertical-gap) * -1) ;
+}
+
+.filmName {
+  text-align: center;
+  color: var(--text-color-average);
+  font-weight: 600;
+}
