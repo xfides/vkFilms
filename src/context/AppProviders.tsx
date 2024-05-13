@@ -13,6 +13,7 @@ import {
 } from "@/ts/films.ts";
 import {useService} from "@/hooks/useService.ts";
 import {getFilmById, getFilms} from "@/api/service.ts";
+import {BrowserRouter} from "react-router-dom";
 
 export default function AppProviders({children}: { children: ReactNode }) {
 
@@ -49,7 +50,9 @@ export default function AppProviders({children}: { children: ReactNode }) {
       <AllFilmsDispatchContext.Provider value={dispatchAllFilms}>
         <OneFilmContext.Provider value={oneFilmService}>
           <OneFilmDispatchContext.Provider value={dispatchOneFilm}>
-            {children}
+            <BrowserRouter>
+              {children}
+            </BrowserRouter>
           </OneFilmDispatchContext.Provider>
         </OneFilmContext.Provider>
       </AllFilmsDispatchContext.Provider>

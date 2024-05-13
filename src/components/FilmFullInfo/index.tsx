@@ -3,6 +3,7 @@ import PosterImg from "@/components/shared/PosterImg";
 import {FilmCardFull} from "@/ts/films.ts";
 import {normalizeFilmData} from "@/utils";
 
+/*
 const mockProps = {
   id: 5,
   name: 'name 5',
@@ -20,6 +21,7 @@ const mockProps = {
   }
 
 }
+*/
 
 function FilmFullInfo({data}: { data: FilmCardFull }) {
 
@@ -29,7 +31,7 @@ function FilmFullInfo({data}: { data: FilmCardFull }) {
     rating,
     shortDescription,
     description
-  } = mockProps
+  } = data
 
   const normalizedDescription = normalizeFilmData.getDescription({
     description,

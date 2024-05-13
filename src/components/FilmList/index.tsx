@@ -4,8 +4,73 @@ import {useContext, useEffect, useState} from "react";
 import {AllFilmsContext, AllFilmsDispatchContext} from "@/context";
 import Loading from "@/components/shared/Loading";
 import Error from "@/components/shared/Error";
-import {FilmCardShort, FilmsKind} from "@/ts/films.ts";
+import {FilmsKind} from "@/ts/films.ts";
 import PageTitle from "../shared/PageTitle";
+
+/*
+const mockFilms: FilmCardShort[] = [
+  {
+    id: 1,
+    name: 'name 1',
+    alternativeName: undefined,
+    enName: undefined,
+    poster: {
+      url: 'https://dummyimage.com/600x1200/000/fff',
+      previewUrl: 'https://dummyimage.com/600x300/000/fff'
+    }
+  },
+  {
+    id: 2,
+    name: undefined,
+    alternativeName: 'alternativeName 2',
+    enName: undefined,
+    poster: {
+      url: 'https://dummyimage.com/600x1200/000/fff',
+      previewUrl: 'https://dummyimage.com/600x300/000/fff'
+    }
+  },
+  {
+    id: 3,
+    name: undefined,
+    alternativeName: undefined,
+    enName: 'enName 3',
+    poster: {
+      url: 'https://dummyimage.com/600x1200/000/fff',
+      previewUrl: 'https://dummyimage.com/600x300/000/fff'
+    }
+  },
+  {
+    id: 4,
+    name: 'name 4',
+    alternativeName: undefined,
+    enName: undefined,
+    poster: {
+      url: undefined,
+      previewUrl: 'https://dummyimage.com/600x300/000/fff'
+    }
+  },
+  {
+    id: 5,
+    name: undefined,
+    alternativeName: undefined,
+    enName: undefined,
+    poster: {
+      url: 'https://dummyimage.com/600x1200/000/fff',
+      previewUrl: undefined
+    }
+  },
+  {
+    id: 6,
+    name: undefined,
+    alternativeName: 'alternativeName 6',
+    enName: undefined,
+    poster: {
+      url: undefined,
+      previewUrl: undefined
+    }
+  }
+]
+*/
 
 function FilmList() {
 
@@ -18,76 +83,13 @@ function FilmList() {
 
   const [filmsKind] = useState<FilmsKind>({kind: ''})
 
-  // useEffect(()=>{
-  //     dispatchFilms(filmsKind)
-  // },[dispatchFilms, filmsKind])
+  useEffect(() => {
+    dispatchFilms(filmsKind)
+  }, [dispatchFilms, filmsKind])
 
-  console.log(data?.docs)
+  //    ----    ----    ----
 
-  const mockFilms: FilmCardShort[] = [
-    {
-      id: 1,
-      name: 'name 1',
-      alternativeName: undefined,
-      enName: undefined,
-      poster: {
-        url: 'https://dummyimage.com/600x1200/000/fff',
-        previewUrl: 'https://dummyimage.com/600x300/000/fff'
-      }
-    },
-    {
-      id: 2,
-      name: undefined,
-      alternativeName: 'alternativeName 2',
-      enName: undefined,
-      poster: {
-        url: 'https://dummyimage.com/600x1200/000/fff',
-        previewUrl: 'https://dummyimage.com/600x300/000/fff'
-      }
-    },
-    {
-      id: 3,
-      name: undefined,
-      alternativeName: undefined,
-      enName: 'enName 3',
-      poster: {
-        url: 'https://dummyimage.com/600x1200/000/fff',
-        previewUrl: 'https://dummyimage.com/600x300/000/fff'
-      }
-    },
-    {
-      id: 4,
-      name: 'name 4',
-      alternativeName: undefined,
-      enName: undefined,
-      poster: {
-        url: undefined,
-        previewUrl: 'https://dummyimage.com/600x300/000/fff'
-      }
-    },
-    {
-      id: 5,
-      name: undefined,
-      alternativeName: undefined,
-      enName: undefined,
-      poster: {
-        url: 'https://dummyimage.com/600x1200/000/fff',
-        previewUrl: undefined
-      }
-    },
-    {
-      id: 6,
-      name: undefined,
-      alternativeName: 'alternativeName 6',
-      enName: undefined,
-      poster: {
-        url: undefined,
-        previewUrl: undefined
-      }
-    }
-  ]
-
-  const filmsCardShort = data ? data.docs : mockFilms;
+  const filmsCardShort = data ? data.docs : [];
 
   const filmsCardShortComponents = filmsCardShort.map((filmsCardShortInfo) => {
     const key = filmsCardShortInfo.id;

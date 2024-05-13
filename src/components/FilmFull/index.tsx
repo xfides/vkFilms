@@ -6,18 +6,13 @@ import Error from "@/components/shared/Error";
 import PageTitle from "../shared/PageTitle";
 import FilmFullInfo from "@/components/FilmFullInfo";
 import {normalizeFilmData} from "@/utils";
-import {Simulate} from "react-dom/test-utils";
-import load = Simulate.load;
+import {Link, useParams} from "react-router-dom";
 
 function FilmFull() {
 
   const dispatchOneFilm = useContext(OneFilmDispatchContext);
   const oneFilmService = useContext(OneFilmContext);
-  let {data, error, loading} = oneFilmService
-  data = {}
-  error = undefined
-  loading = false;
-
+  const {data, error, loading} = oneFilmService
   const errorMsg = error?.message ?? '';
   const filmName = normalizeFilmData.getName({
     name: data?.name,
@@ -25,16 +20,19 @@ function FilmFull() {
     enName: data?.enName
   });
 
-  const filmId = 5581330
-  const [filmIdPicked, setFilmIdPicked] = useState<number | null>(filmId)
+  //    ----    ----    ----
 
-  // useEffect(() => {
-  //   if (filmIdPicked) {
-  //     dispatchOneFilm({filmId: filmIdPicked})
-  //   }
-  // }, [dispatchOneFilm, filmIdPicked])
+  const urlParams = useParams();
+  const filmId = urlParams.id ? Number(urlParams.id) : null;
+  const [filmIdPicked] = useState<number | null>(filmId)
 
-  console.log(data);
+  useEffect(() => {
+    if (filmIdPicked) {
+      dispatchOneFilm({filmId: filmIdPicked})
+    }
+  }, [dispatchOneFilm, filmIdPicked])
+
+  //    ----    ----    ----
 
   const isShowFilmData = !error && !loading && filmIdPicked && data
 
@@ -48,7 +46,7 @@ function FilmFull() {
       {isShowFilmData && data && <FilmFullInfo data={data}></FilmFullInfo>}
 
       <div className={css.control}>
-        <a href="#">К списку фильмов</a>
+        <Link to="/">К списку фильмов</Link>
       </div>
     </section>
   );

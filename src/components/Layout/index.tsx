@@ -1,14 +1,15 @@
 import './style.module.css'
-
-import {ReactNode} from "react";
 import MemoHeader from "@/components/Header";
 import MemoFooter from "@/components/Footer";
+import {Outlet} from "react-router-dom";
 
-function Layout({children}: { children: ReactNode }) {
+function Layout() {
   return (
     <>
       <MemoHeader></MemoHeader>
-      <main>{children}</main>
+      <main>
+        <Outlet/>
+      </main>
       <MemoFooter></MemoFooter>
     </>
   );
