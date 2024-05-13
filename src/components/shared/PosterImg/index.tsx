@@ -4,7 +4,7 @@ import {FilmPoster} from "@/ts/films.ts";
 
 function PosterImg({poster = {}, firstTry = 'url'}: {
   poster?: FilmPoster,
-  firstTry: 'url' | 'previewUrl'
+  firstTry?: 'url' | 'previewUrl'
 }) {
 
   const previewImgUrl = normalizeFilmData.getImgUrl(

@@ -4,7 +4,8 @@ import {useContext, useEffect, useState} from "react";
 import {AllFilmsContext, AllFilmsDispatchContext} from "@/context";
 import Loading from "@/components/shared/Loading";
 import Error from "@/components/shared/Error";
-import {FilmsKind} from "@/ts/films.ts";
+import {FilmCardShort, FilmsKind} from "@/ts/films.ts";
+import PageTitle from "../shared/PageTitle";
 
 function FilmList() {
 
@@ -23,12 +24,12 @@ function FilmList() {
 
   console.log(data?.docs)
 
-  const mockFilms = [
+  const mockFilms: FilmCardShort[] = [
     {
       id: 1,
       name: 'name 1',
-      alternativeName: null,
-      enName: null,
+      alternativeName: undefined,
+      enName: undefined,
       poster: {
         url: 'https://dummyimage.com/600x1200/000/fff',
         previewUrl: 'https://dummyimage.com/600x300/000/fff'
@@ -36,9 +37,9 @@ function FilmList() {
     },
     {
       id: 2,
-      name: null,
+      name: undefined,
       alternativeName: 'alternativeName 2',
-      enName: null,
+      enName: undefined,
       poster: {
         url: 'https://dummyimage.com/600x1200/000/fff',
         previewUrl: 'https://dummyimage.com/600x300/000/fff'
@@ -46,8 +47,8 @@ function FilmList() {
     },
     {
       id: 3,
-      name: null,
-      alternativeName: null,
+      name: undefined,
+      alternativeName: undefined,
       enName: 'enName 3',
       poster: {
         url: 'https://dummyimage.com/600x1200/000/fff',
@@ -57,31 +58,31 @@ function FilmList() {
     {
       id: 4,
       name: 'name 4',
-      alternativeName: null,
-      enName: null,
+      alternativeName: undefined,
+      enName: undefined,
       poster: {
-        url: null,
+        url: undefined,
         previewUrl: 'https://dummyimage.com/600x300/000/fff'
       }
     },
     {
       id: 5,
-      name: null,
-      alternativeName: null,
-      enName: null,
+      name: undefined,
+      alternativeName: undefined,
+      enName: undefined,
       poster: {
         url: 'https://dummyimage.com/600x1200/000/fff',
-        previewUrl: null
+        previewUrl: undefined
       }
     },
     {
       id: 6,
-      name: null,
+      name: undefined,
       alternativeName: 'alternativeName 6',
-      enName: null,
+      enName: undefined,
       poster: {
-        url: null,
-        previewUrl: null
+        url: undefined,
+        previewUrl: undefined
       }
     }
   ]
@@ -101,9 +102,9 @@ function FilmList() {
   return (
     <section className={css.films}>
 
-      <h1 className={css.filmsTitle}>
+      <PageTitle>
         Фильмы, полученные с API: https://api.kinopoisk.dev
-      </h1>
+      </PageTitle>
 
       <div className={css.filmsContainer}>
         <Error errorMsg={errorMsg}></Error>

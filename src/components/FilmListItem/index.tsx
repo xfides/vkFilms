@@ -1,29 +1,19 @@
 import css from './style.module.css';
 import {FilmCardShort} from "@/ts/films.ts";
+import {normalizeFilmData} from "@/utils";
+import PosterImg from "@/components/shared/PosterImg";
 
 function FilmListItem(props: { info: FilmCardShort }) {
   const {id, name, alternativeName, enName, poster} = props.info;
-  const {previewUrl, url} = poster ?? {previewUrl: null, url: null};
+  const filmName = normalizeFilmData.getName({name, alternativeName, enName});
+
   console.log(id);
-
-  const filmName = name ?? alternativeName ?? enName ?? 'movie name is missing';
-  const previewImgUrl = previewUrl ?? url ?? null;
-
-  let img = <div className={css.filmImg}><strong>poster missing</strong></div>;
-  if (previewImgUrl) {
-    img = (
-      <img src={previewImgUrl}
-           alt="poster"
-           className={css.filmImg}
-      />
-    )
-  }
 
   return (
     <article className={css.filmCard}>
       <a href="#" className={css.filmLink}>
         <div className={css.filmWrapImg}>
-          {img}
+          <PosterImg poster={poster} firstTry="previewUrl"></PosterImg>
         </div>
       </a>
 
