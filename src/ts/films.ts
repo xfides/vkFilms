@@ -1,12 +1,14 @@
+export interface FilmPoster {
+  url?: string,
+  previewUrl?: string
+}
+
 export interface FilmCardShort {
   id: number,
-  name: string | null,
-  alternativeName: string | null,
-  enName: string | null,
-  poster?: {
-    url: string | null,
-    previewUrl: string | null
-  }
+  name?: string,
+  alternativeName?: string,
+  enName?: string,
+  poster?: FilmPoster
 }
 
 export interface ResponseFilmCardShort {
@@ -18,7 +20,17 @@ export interface ResponseFilmCardShort {
 }
 
 export interface FilmCardFull {
-  nameLong: string
+  id: number,
+  name?: string,
+  alternativeName?: string,
+  enName?: string,
+  year?: number,
+  description?: string,
+  shortDescription?: string,
+  rating: {
+    kp?: number
+  },
+  poster?: FilmPoster
 }
 
 export interface AsyncService<ServiceData> {
@@ -32,7 +44,7 @@ export interface FilmsKind {
 }
 
 export interface FilmIdPicked {
-  filmId: string
+  filmId: number
 }
 
 

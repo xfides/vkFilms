@@ -1,0 +1,7 @@
+.pageTitle {
+  color: var(--text-color-active);
+  font-size: var(--font-size-bigger);
+  font-weight: 900;
+  text-align: center;
+  padding-bottom: var(--vertical-gap);
+}
