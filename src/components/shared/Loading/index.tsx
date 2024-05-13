@@ -1,8 +1,14 @@
-import './style.module.css'
+import css from  './style.module.css';
+import loader from '@/assets/images/loader.gif';
 
-function Loading() {
+function Loading({loading = false}: {loading: boolean}) {
+
+  if(!loading) return null;
+
   return (
-    <div>Loading</div>
+    <div className={css.loaderWrap}>
+      <img src={loader} alt="load icon" className={css.loaderImg}/>
+    </div>
   );
 }
 
