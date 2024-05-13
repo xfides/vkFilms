@@ -1,0 +1,44 @@
+.filmOne{
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.filmOneSignsAll{
+  width: 40%;
+}
+
+.filmOnePosterWrap{
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.filmOneSignsSmall{
+  color: var(--text-color-average);
+  font-size: var(--font-size-bigger);
+}
+
+.filmOneInfo{
+  width: 60%;
+  padding: 0 var(--horizontal-gap);
+}
+
+@media (max-width: 768px) {
+  .filmOne {
+    flex-wrap: wrap;
+  }
+
+  .filmOneSignsAll{
+    width: 100%;
+  }
+
+  .filmOneSignsSmall{
+    text-align: center;
+  }
+
+  .filmOneInfo{
+    width: 100%;
+    padding: var(--vertical-gap) 0;
+  }
+}

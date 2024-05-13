@@ -6,8 +6,8 @@ function App() {
 
   return (
     <Layout>
-      <FilmList></FilmList>
-      {/*<FilmFull></FilmFull>*/}
+      {/*<FilmList></FilmList>*/}
+      <FilmFull></FilmFull>
     </Layout>
   );
 }

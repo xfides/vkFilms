@@ -1,0 +1,17 @@
+.filmOneWrap{}
+
+.control{
+  display: block;
+  text-align: center;
+  padding: var(--vertical-gap) var(--horizontal-gap);
+  border-top:  1px dotted var(--text-color);
+  margin-top: var(--vertical-gap);
+}
+
+.control > a {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--text-color);
+  font-size: var(--font-size);
+  font-weight: 800;
+}
